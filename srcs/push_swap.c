@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:17:42 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:31:36 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	main(int argc, char **argv)
 {
 	// t_stack	a;
 	// t_stack	b;
+	// t_enum	operations;
+	// t_context context;
 	
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
