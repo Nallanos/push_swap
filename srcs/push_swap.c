@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 13:00:27 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:17:42 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,14 @@ void	free_split(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	// t_stack	a;
+	// t_stack	b;
+	
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	if (no_error(argc, argv))
+	if (no_error(argc, argv) && argv[1])
 	{
 		printf("OK\n"); //test
-		//seul erreur restante a gerer ./push_swap "" pour le moment rentre dans ce if, a gerer dedans imo
 		//creer la pile, call les algos, blabla...
 	}
 	else
