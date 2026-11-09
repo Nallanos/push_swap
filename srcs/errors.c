@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:31:36 by moabdess         ###   ########.fr       */
+/*   Created: 2026/11/09 16:37:30 by moabdess          #+#    #+#             */
+/*   Updated: 2026/11/09 16:38:13 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,25 +63,3 @@ void	free_split(int argc, char **argv)
 		free(argv);
 	}
 }
-
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	// t_stack	a;
-	// t_stack	b;
-	// t_enum	operations;
-	// t_context context;
-	
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	if (no_error(argc, argv) && argv[1])
-	{
-		printf("OK\n"); //test
-		//creer la pile, call les algos, blabla...
-	}
-	else
-		printf("Error\n"); //a remplacer avec ft_printf
-	free_split(argc, argv);
-}
-

@@ -6,7 +6,7 @@
 #    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/09 12:59:38 by moabdess         ###   ########.fr        #
+#    Updated: 2026/11/09 16:42:12 by moabdess         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FLAGS = -Wall -Werror -Wextra -I includes #fsanitize=address
 
 LIBFT = Libft/libft.a
 
-SRCS = srcs/push_swap.c
+SRCS =	srcs/main.c srcs/errors.c \
+		srcs/swap_operations.c srcs/rotate_operations.c srcs/operations.c
 
 OBJS = $(SRCS:.c=.o)
 

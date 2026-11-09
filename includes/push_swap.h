@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:29:23 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/09 16:40:21 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,9 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+int		ft_tablen(char **str);
+int		no_error(int argc, char **argv);
+void	free_split(int argc, char **argv);
 
 #endif
