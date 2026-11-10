@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
+#    By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/09 16:42:12 by moabdess         ###   ########.fr        #
+#    Updated: 2026/11/10 11:28:10 by abenameu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ FLAGS = -Wall -Werror -Wextra -I includes #fsanitize=address
 
 LIBFT = Libft/libft.a
 
-SRCS =	srcs/main.c srcs/errors.c \
-		srcs/swap_operations.c srcs/rotate_operations.c srcs/operations.c
+SRCS = srcs/push_swap.c srcs/setup.c srcs/utils.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:40:21 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/10 11:29:35 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
 # include "../Libft/libft.h"
 
@@ -59,6 +64,12 @@ void	rrr(t_stack *a, t_stack *b);
 
 int		ft_tablen(char **str);
 int		no_error(int argc, char **argv);
+void	free_split(int argc, char **argv);
+
+void	print_split(char **str);
+void	print_error();
+int		no_error(int argc, char **argv);
+int		ft_tablen(char **str);
 void	free_split(int argc, char **argv);
 
 #endif
