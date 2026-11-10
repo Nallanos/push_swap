@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   setup_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/09 16:36:08 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:42:40 by moabdess         ###   ########.fr       */
+/*   Created: 2026/11/10 12:01:45 by abenameu          #+#    #+#             */
+/*   Updated: 2026/11/10 12:02:15 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rrr(t_stack *a, t_stack *b);
-
-void	do_op(t_context context);
+void	free_t_stack(t_stack *stack)
+{
+	if (stack)
+	{
+		if (stack->array)
+			free(stack->array);
+		free(stack);
+	}
+}

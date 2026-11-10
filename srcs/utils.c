@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:56:02 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/10 11:04:18 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/10 15:47:52 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,21 @@ void	free_split(int argc, char **argv)
 		free(argv);
 	}
 }
+int ft_strcat(char *dest, const char *src)
+{
+	int	i;
+	int	dest_len;
+
+	dest_len = 0;
+	while (dest[dest_len])
+		dest_len++;
+	i = 0;
+	while (src[i])
+	{
+		dest[dest_len + i] = src[i];
+		i++;
+	}
+	dest[dest_len + i] = '\0';
+	return (dest_len + i);
+}
+

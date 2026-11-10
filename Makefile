@@ -6,7 +6,7 @@
 #    By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/10 11:28:10 by abenameu         ###   ########.fr        #
+#    Updated: 2026/11/10 15:46:44 by abenameu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,16 @@ FLAGS = -Wall -Werror -Wextra -I includes #fsanitize=address
 
 LIBFT = Libft/libft.a
 
-SRCS = srcs/push_swap.c srcs/setup.c srcs/utils.c
+SRCS =	srcs/main.c \
+		srcs/parsing.c \
+		srcs/errors.c \
+		srcs/utils.c \
+		srcs/setup.c \
+		srcs/setup_utils.c \
+		srcs/op/operations.c \
+		srcs/op/swap_operations.c \
+		srcs/op/rotate_operations.c \
+		srcs/argument_parsing.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -26,7 +35,7 @@ $(NAME): $(LIBFT) $(OBJS)
 $(LIBFT):
 	make -C Libft/
 
-%.o: %.c
+%.o: %.c includes/push_swap.h
 	cc $(FLAGS) -c $< -o $@
 
 all: $(NAME)

@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_operations.c                                  :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/09 16:34:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/09 16:43:06 by moabdess         ###   ########.fr       */
+/*   Created: 2026/11/09 16:36:08 by moabdess          #+#    #+#             */
+/*   Updated: 2026/11/10 14:03:26 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	sa(t_stack *a);
+void	rrr(t_stack *a, t_stack *b);
 
-void	sb(t_stack *b);
-
-void	ss(t_stack *a, t_stack *b);
-
-void	pa(t_stack *a);
-
-void	pb(t_stack *b);
+void	do_op(t_stack_context context);
