@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:02:46 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 09:13:13 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 16:04:01 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	is_valid_number(const char *str)
 	int	i;
 
 	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		++i;
 	if (!str[i])
 		return (0);
 	while (str[i])

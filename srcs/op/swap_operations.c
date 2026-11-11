@@ -6,18 +6,30 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:34:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/10 13:05:31 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:21:19 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sa(t_stack *a);
+void	sa(t_stack *a)
+{
+	int	tmp;
 
-void	sb(t_stack *b);
+	if (a->size < 2)
+		return ;
+	tmp = a->array[0];
+	a->array[0] = a->array[1];
+	a->array[1] = tmp;
+}
 
-void	ss(t_stack *a, t_stack *b);
+void	sb(t_stack *b)
+{
+	sa(b);
+}
 
-void	pa(t_stack *a);
-
-void	pb(t_stack *b);
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
+}

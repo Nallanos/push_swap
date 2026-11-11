@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:54:47 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/10 16:15:58 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 11:15:33 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	fill_stack_array(char **input, t_stack *stack)
 	int	i;
 	int	array_size;
 
-	array_size = stack->size; 
+	array_size = stack->capacity; 
 	i = 0;
 	if (!array_size)
 		return (0);
@@ -42,7 +42,7 @@ int	fill_stack_array(char **input, t_stack *stack)
 	return (1);
 }
 
-t_stack	*create_stack(char **input, int size)
+t_stack	*create_stack(char **input, int size, int capacity)
 {
 	t_stack	*stack;
 
@@ -50,6 +50,7 @@ t_stack	*create_stack(char **input, int size)
 	if (!stack)
 		return (NULL);
 	stack->size = size;
+	stack->capacity = capacity;
 	if (!fill_stack_array(input, stack))
 	{
 		free_t_stack(stack);
@@ -64,10 +65,10 @@ t_stack_context	*setup_context(char **input)
 	t_stack 	*stack_b;
 	t_stack_context	*context;
 
-	stack_a = create_stack(input, ft_tablen(input));
+	stack_a = create_stack(input, ft_tablen(input), ft_tablen(input));
 	if (!stack_a)
 		return (NULL);
-	stack_b = create_stack(NULL, stack_a->size);
+	stack_b = create_stack(NULL, 0, stack_a->capacity);
 	if (!stack_b)
 	{
 		free_t_stack(stack_a);
@@ -82,5 +83,6 @@ t_stack_context	*setup_context(char **input)
 	}
 	context->a = stack_a;
 	context->b = stack_b;
+	ft_bzero(context->operations_count, sizeof(context->operations_count));
 	return (context);
 }

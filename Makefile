@@ -6,7 +6,7 @@
 #    By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/11 09:40:34 by abenameu         ###   ########.fr        #
+#    Updated: 2026/11/11 15:34:38 by abenameu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,13 @@ SRCS =	srcs/main.c \
 		srcs/op/rotate_operations.c \
 		srcs/argument_parsing.c \
 		srcs/disorder.c \
+		srcs/op/push_operations.c \
+		srcs/op/rotate_op_reversed.c \
+		srcs/algo/simple.c \
+		srcs/algo/medium.c \
+		srcs/algo/complex.c \
+		srcs/algo/adaptive.c \
+		srcs/algo/math.c \
 
 OBJS = $(SRCS:.c=.o)
 

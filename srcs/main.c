@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/11 09:48:01 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 16:07:04 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,20 @@ int	push_swap(t_exec_context exec_context, char **input)
 	if (!context)
 		return (0);
 	exec_context.disorder = get_disorder(context->a->array, context->a->size);
-	if (exec_context.is_bench)
+	if (exec_context.disorder == 0)
 	{
-		
+		free_t_stack_context(context);
+		return (1);
 	}
+	if (exec_context.mode == simple)
+		simple_sort(context, exec_context.disorder);
+	else if (exec_context.mode == medium)
+		medium_sort(context, exec_context.disorder);
+	else if (exec_context.mode == complex)
+		complex_sort(context, exec_context.disorder);
+	else if (exec_context.mode == adaptive)
+		adaptive_sort(context, exec_context.disorder);
 	free_t_stack_context(context);
-	//seul erreur restante a gerer ./push_swap "" pour le moment rentre dans ce if, a gerer dedans imo
-	//creer la pile, call les algos, blabla...
 	return (1);
 }
 
