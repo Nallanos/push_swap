@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:56:02 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/10 15:47:52 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 09:07:10 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,29 @@ int ft_strcat(char *dest, const char *src)
 	return (dest_len + i);
 }
 
+long	ft_atol(const char *str)
+{
+	int		i;
+	int		sign;
+	long	res;
+
+	i = 0;
+	sign = 1;
+	res = 0;
+	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
+		++i;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		++i;
+	}
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		res = res * 10 + str[i] - '0';
+		if (res * sign > 2147483647 || res * sign < -2147483648)
+			return (res * sign);
+		++i;
+	}
+	return (res * sign);
+}

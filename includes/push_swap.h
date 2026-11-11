@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/10 16:14:10 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 09:45:47 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct exec_context
 {
 	t_mode	mode;
 	int		is_bench;
+	float	disorder;
 }	t_exec_context;
 
 void			do_op(t_stack_context context);
@@ -78,13 +79,12 @@ void			rrb(t_stack *b);
 void			rrr(t_stack *a, t_stack *b);
 		
 int				ft_tablen(char **str);
-int				no_error(int argc, char **argv);
+int				no_error(char **input);
 int 			exit_on_error(char **input, t_stack_context *context);
 void			free_split(int argc, char **argv);
 		
 void			print_split(char **str);
 int				print_error();
-int				no_error(int argc, char **argv);
 int				ft_tablen(char **str);
 void			free_split(int argc, char **argv);
 
@@ -98,5 +98,7 @@ t_exec_context	get_exec_context(int argc, char **argv);
 int				has_blank_arg(int argc, char **argv);
 char			*format_argv(int argc, char **argv);
 int 			ft_strcat(char *dest, const char *src);
+long			ft_atol(const char *str);
+float			get_disorder(int *input, int len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:02:46 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/10 16:12:58 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 09:13:13 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,57 @@ int	print_error()
 	return (0);
 }
 
-int	no_error(int argc, char **argv)
+int	is_valid_number(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		++i;
+	}
+	if (ft_atol(str) > 2147483647 || ft_atol(str) < -2147483648)
+		return (0);
+	return (1);
+}
+
+int has_duplicates(char **input)
 {
 	int	i;
 	int	j;
-	
-	i = -1;
-	if (argc == 2)
-		argc = ft_tablen(argv);
-	else if (argc > 2)
-		i = 0;
-	while (++i < argc)
+
+	i = 0;
+	while (input[i])
 	{
-		j = i;
-		while (++j < argc)
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return (0);
-		j = 0;
-		if (ft_atoi(argv[i]) < 0)
+		j = i + 1;
+		while (input[j])
+		{
+			if (ft_atol(input[i]) == ft_atol(input[j]))
+				return (1);
 			++j;
-		if (!argv[i][j] || ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648) //line too long
-			return (0);
-		--j;
-		while (argv[i][++j])
-			if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
-				return (0);
+		}
+		++i;
 	}
+	return (0);
+}
+
+int	no_error(char **input)
+{
+	int i;
+
+	i = 0;
+	while (input[i])
+	{
+		if (!is_valid_number(input[i]))
+			return (0);
+		++i;
+	}
+	if (has_duplicates(input))
+		return (0);
 	return (1);
 }
 

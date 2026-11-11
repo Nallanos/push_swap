@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/10 16:19:53 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/11 09:48:01 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	push_swap(t_exec_context exec_context, char **input)
 	t_stack_context	*context;
 
 	context = setup_context(input);
+	if (!context)
+		return (0);
+	exec_context.disorder = get_disorder(context->a->array, context->a->size);
 	if (exec_context.is_bench)
 	{
 		
@@ -51,7 +54,7 @@ int handle_arguments(int argc, char **argv, t_exec_context *exec_context, char *
 		return (0);
 	*input = ft_split(formatted_argv, ' ');
 	free(formatted_argv);
-	if (!no_error(2, *input))
+	if (!no_error(*input))
 	{
 		free_split(2, *input);
 		return (0);
@@ -75,4 +78,3 @@ int	main(int argc, char **argv)
 	push_swap(exec_context, input);
 	free_split(2, input);
 }
-
