@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   argument_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 15:28:22 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/10 15:46:59 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/12 12:30:05 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*alloc_formated_argv(int argc, char **argv)
 	len = 0;
 	while (i < argc)
 	{
-		len += ft_strlen(argv[i]) + 1; 
+		len += ft_strlen(argv[i]) + 1;
 		i++;
 	}
 	result = malloc(len);
@@ -74,7 +74,7 @@ char	*concat_argv(int argc, char **argv)
 		if (argv[i][0] == '-' && argv[i][1] == '-')
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		ft_strcat(result, argv[i]);
 		if (i < argc - 1)
@@ -87,7 +87,7 @@ char	*concat_argv(int argc, char **argv)
 char	*format_argv(int argc, char **argv)
 {
 	char	*result;
-	
+
 	if (has_blank_arg(argc, argv) == 1)
 		return (NULL);
 	result = concat_argv(argc, argv);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:02:46 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 16:04:01 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/12 12:31:23 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	print_error()
+int	print_error(void)
 {
 	write(2, "Error\n", 6);
 	return (0);
@@ -38,7 +38,7 @@ int	is_valid_number(const char *str)
 	return (1);
 }
 
-int has_duplicates(char **input)
+int	has_duplicates(char **input)
 {
 	int	i;
 	int	j;
@@ -60,7 +60,7 @@ int has_duplicates(char **input)
 
 int	no_error(char **input)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (input[i])
@@ -74,7 +74,7 @@ int	no_error(char **input)
 	return (1);
 }
 
-int exit_on_error(char **input, t_stack_context *context)
+int	exit_on_error(char **input, t_stack_context *context)
 {
 	print_error();
 	if (context)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/11 16:07:04 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/12 12:31:07 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int	push_swap(t_exec_context exec_context, char **input)
 	return (1);
 }
 
-int handle_arguments(int argc, char **argv, t_exec_context *exec_context, char ***input)
+int	handle_arguments(int argc, char **argv, t_exec_context *exec_context,
+		char ***input)
 {
 	char *formatted_argv;
 

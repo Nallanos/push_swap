@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/11 15:33:35 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/12 15:13:07 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void			adaptive_sort(t_stack_context *context, float disorder);
 void			medium_sort(t_stack_context *context, float disorder);
 void			complex_sort(t_stack_context *context, float disorder);
 int				ft_sqrt(int nb);
+int				index_stack(t_stack *stack);
 
 #endif
