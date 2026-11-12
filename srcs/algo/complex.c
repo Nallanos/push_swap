@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:58:21 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/12 15:59:35 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/12 17:33:45 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static void	radix(t_stack_context *context, int bit)
 			do_op(context, op_pb);
 		++i;
 	}
-	while (context->b->size > 0)
-		do_op(context, op_pa);
+	while (context->b->size > 0) //ici ca push tout vers a apres chaque modif
+		do_op(context, op_pa); //ca marche mais pas opti il faut juste faire le push vers la fin
 }
 
 void	complex_sort(t_stack_context *context, float disorder)
