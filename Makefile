@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+         #
+#    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/11 15:34:38 by abenameu         ###   ########.fr        #
+#    Updated: 2026/11/13 18:17:23 by moabdess         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS =	srcs/main.c \
 		srcs/algo/complex.c \
 		srcs/algo/adaptive.c \
 		srcs/algo/math.c \
+		srcs/bench.c
 
 OBJS = $(SRCS:.c=.o)
 

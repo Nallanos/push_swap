@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/12 12:31:07 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/13 18:18:07 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,10 @@ int	exit_if_only_flags(int argc, char **argv)
 	return (1);
 }
 
-int	push_swap(t_exec_context exec_context, char **input)
+void	choose_mode(t_exec_context exec_context, t_stack_context *context)
 {
-	t_stack_context	*context;
-
-	context = setup_context(input);
-	if (!context)
-		return (0);
-	exec_context.disorder = get_disorder(context->a->array, context->a->size);
 	if (exec_context.disorder == 0)
-	{
-		free_t_stack_context(context);
-		return (1);
-	}
+		return ;
 	if (exec_context.mode == simple)
 		simple_sort(context, exec_context.disorder);
 	else if (exec_context.mode == medium)
@@ -47,6 +38,19 @@ int	push_swap(t_exec_context exec_context, char **input)
 		complex_sort(context, exec_context.disorder);
 	else if (exec_context.mode == adaptive)
 		adaptive_sort(context, exec_context.disorder);
+}
+
+int	push_swap(t_exec_context exec_context, char **input)
+{
+	t_stack_context	*context;
+
+	context = setup_context(input);
+	if (!context)
+		return (0);
+	exec_context.disorder = get_disorder(context->a->array, context->a->size);
+	choose_mode(exec_context, context);
+	if (exec_context.is_bench)
+		print_bench(exec_context, context);
 	free_t_stack_context(context);
 	return (1);
 }

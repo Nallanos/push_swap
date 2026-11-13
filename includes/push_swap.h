@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/12 15:13:07 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/13 18:19:21 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,6 @@ void			medium_sort(t_stack_context *context, float disorder);
 void			complex_sort(t_stack_context *context, float disorder);
 int				ft_sqrt(int nb);
 int				index_stack(t_stack *stack);
+void			print_bench(t_exec_context exec_context, t_stack_context *context);
 
 #endif
