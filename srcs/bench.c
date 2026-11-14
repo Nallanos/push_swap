@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 18:10:44 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/13 18:49:50 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:25:05 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_disorder(float disorder)
 
 void	print_strategy(t_exec_context exec_context)
 {
-	t_mode current_mode;
+	t_mode	current_mode;
 
 	current_mode = exec_context.mode;
 	ft_putstr_fd("[bench] strategy: ", 2);
@@ -48,9 +48,9 @@ void	print_strategy(t_exec_context exec_context)
 	else
 		ft_putstr_fd("Complex / ", 2);
 	if (current_mode == simple)
-		ft_putstr_fd("O(n**2)\n", 2); //aucune idee comment faire ces symboles, ici cest O(n**2)
+		ft_putstr_fd("O(n²)\n", 2);
 	else if (current_mode == medium)
-		ft_putstr_fd("O(n sqrt(n))\n", 2); //ici c'est O(n racine caree de n)
+		ft_putstr_fd("O(n√n)\n", 2);
 	else
 		ft_putstr_fd("O(n log n)\n", 2);
 }
@@ -84,7 +84,7 @@ void	print_bench(t_exec_context exec_context, t_stack_context *context)
 {
 	int	i;
 	int	total;
-	
+
 	i = -1;
 	total = 0;
 	while (++i < 11)

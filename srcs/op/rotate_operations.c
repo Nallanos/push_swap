@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/09 16:35:18 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/11 11:10:17 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:20:45 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ra(t_stack *a)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	temp = a->array[0];
 	i = 0;

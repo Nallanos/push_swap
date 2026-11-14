@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:57:53 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 16:17:51 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:18:16 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int	find_max_index(t_stack *s)
 {
 	int	i;
-	int index;
+	int	index;
 	int	value;
 
 	i = 0;
-	value = s->array[0]; 
+	value = s->array[0];
 	index = 0;
 	while (i < s->size)
 	{
@@ -29,15 +29,15 @@ int	find_max_index(t_stack *s)
 			index = i;
 		}
 		i++;
-	}	
+	}
 	return (index);
 }
 
 int	index_stack(t_stack *stack)
 {
 	int	i;
-	int j;
-	int *ranks;
+	int	j;
+	int	*ranks;
 
 	ranks = (int *)malloc(sizeof(int) * stack->size);
 	if (!ranks)
@@ -59,10 +59,11 @@ int	index_stack(t_stack *stack)
 	free(ranks);
 	return (1);
 }
+
 void	push_chunks(t_stack_context *context, int chunk_size)
 {
 	int	top;
-	int pushed_count;
+	int	pushed_count;
 
 	top = chunk_size;
 	pushed_count = 0;
@@ -74,7 +75,8 @@ void	push_chunks(t_stack_context *context, int chunk_size)
 		{
 			do_op(context, op_pb);
 			pushed_count++;
-			if (context->b->size > 1 && context->b->array[0] < top - (chunk_size / 2))
+			if (context->b->size > 1
+				&& context->b->array[0] < top - (chunk_size / 2))
 				do_op(context, op_rb);
 		}
 		else
@@ -113,10 +115,10 @@ void	pull_back(t_stack_context *context)
 
 void	medium_sort(t_stack_context *context, float disorder)
 {
-	(void)disorder;
-	int chunk_size;
+	int	chunk_size;
 	int	chunk_count;
 
+	(void) disorder;
 	chunk_count = ft_sqrt(context->a->size) / 2;
 	if (chunk_count < 1)
 		chunk_count = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:56:02 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 09:07:10 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:15:07 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	print_split(char **str)
 		++i;
 	}
 }
+
 int	ft_tablen(char **str)
 {
 	int	i;
@@ -45,7 +46,8 @@ void	free_split(int argc, char **argv)
 		free(argv);
 	}
 }
-int ft_strcat(char *dest, const char *src)
+
+int	ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	dest_len;

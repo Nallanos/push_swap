@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 10:21:13 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 10:41:35 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:20:22 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_stack *dst, t_stack *src)
 {
 	int	i;
 	int	tmp;
-	
+
 	if (src->size == 0)
 		return ;
 	if (dst->size >= dst->capacity)

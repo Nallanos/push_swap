@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:59:08 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/12 16:16:42 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:15:47 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	adaptive_sort(t_stack_context *context, float disorder)
 	else if (disorder < 0.5)
 		medium_sort(context, disorder);
 	else
-		complex_sort(context, disorder);	
+		complex_sort(context, disorder);
 }
 
 //on peut optimiser nos algos si on combine ces instructions en une seule

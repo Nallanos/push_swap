@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:29:08 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 12:02:05 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:20:15 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int	find_min_index(t_stack *s)
 {
 	int	i;
-	int index;
+	int	index;
 	int	value;
 
 	i = 0;
-	value = s->array[0]; 
+	value = s->array[0];
 	index = 0;
 	while (i < s->size)
 	{
@@ -29,7 +29,7 @@ int	find_min_index(t_stack *s)
 			index = i;
 		}
 		i++;
-	}	
+	}
 	return (index);
 }
 

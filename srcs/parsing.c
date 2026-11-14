@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:06:25 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 09:47:32 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:09:58 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_bench(int argc, char **argv)
 	int	i;
 
 	i = 0;
-	while(i < argc)
+	while (i < argc)
 	{
 		if (ft_strncmp(argv[i], "--bench", 8) == 0)
 			return (1);
@@ -46,9 +46,9 @@ t_mode	get_mode(int argc, char **argv)
 
 	i = 0;
 	mode = undefined;
-	while(i < argc)
+	while (i < argc)
 	{
-		if (argv[i][0] == '-' && argv[i][1] == '-' 
+		if (argv[i][0] == '-' && argv[i][1] == '-'
 			&& ft_strncmp(argv[i], "--bench", 8))
 		{
 			if (mode != undefined)
@@ -61,6 +61,7 @@ t_mode	get_mode(int argc, char **argv)
 		return (adaptive);
 	return (mode);
 }
+
 t_exec_context	get_exec_context(int argc, char **argv)
 {
 	t_exec_context	context;

@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/13 18:18:07 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:09:16 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	push_swap(t_exec_context exec_context, char **input)
 int	handle_arguments(int argc, char **argv, t_exec_context *exec_context,
 		char ***input)
 {
-	char *formatted_argv;
+	char	*formatted_argv;
 
 	*exec_context = get_exec_context(argc, argv);
 	formatted_argv = format_argv(argc, argv);

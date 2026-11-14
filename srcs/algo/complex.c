@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:58:21 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/13 18:08:26 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:16:31 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	radix(t_stack_context *context, int bit)
 			do_op(context, op_pb);
 		++i;
 	}
-	while (context->b->size > 0) 
+	while (context->b->size > 0)
 		do_op(context, op_pa);
 }
 
@@ -47,8 +47,8 @@ void	complex_sort(t_stack_context *context, float disorder)
 {
 	int	bit;
 	int	max_bits;
-	(void)disorder;
 
+	(void) disorder;
 	if (!index_stack(context->a))
 		return ;
 	max_bits = get_max_bits(context->a->size);
