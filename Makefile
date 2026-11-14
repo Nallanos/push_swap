@@ -6,13 +6,13 @@
 #    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/13 18:17:23 by moabdess         ###   ########.fr        #
+#    Updated: 2026/11/14 15:51:47 by moabdess         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-FLAGS = -Wall -Werror -Wextra -I includes #fsanitize=address
+FLAGS = -Wall -Werror -Wextra -I includes #-fsanitize=address
 
 LIBFT = Libft/libft.a
 
