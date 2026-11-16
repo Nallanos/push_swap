@@ -6,13 +6,13 @@
 #    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/14 15:51:47 by moabdess         ###   ########.fr        #
+#    Updated: 2026/11/16 14:58:01 by moabdess         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-FLAGS = -Wall -Werror -Wextra -I includes #-fsanitize=address
+FLAGS = -Wall -Werror -Wextra -I includes
 
 LIBFT = Libft/libft.a
 
@@ -34,7 +34,9 @@ SRCS =	srcs/main.c \
 		srcs/algo/complex.c \
 		srcs/algo/adaptive.c \
 		srcs/algo/math.c \
-		srcs/bench.c
+		srcs/bench.c \
+		srcs/algo/complex_utils.c \
+		srcs/algo/partitions.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -30,9 +30,27 @@ make re
 ```
 deletes all created object files and the push_swap executable library then recompiles the project.
 
-## ...
+## Algorithms
+
+### Simple
+
+### Medium
+
+### Complex
+
+### Adaptive
+
+
+## Labor repartition
+
+**moabdess** : error parsing, complex algorithm, benchmark mode
+
+**abenameu** : sort operations, simple algorithm, medium algorithm
 
 ## Resources
 
 - Manual pages of the Libc functions
 - The 42 Libft subject pdf
+- Quick sort wikipedia page : https://en.wikipedia.org/wiki/Quicksort
+- Video explanation of the quick sort algorithm : https://www.youtube.com/watch?v=Vtckgz38QHs
+- In depth explanation of how to implement the quick sort algorithm : https://www.youtube.com/watch?v=pM-6r5xsNEY

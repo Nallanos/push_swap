@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:59:08 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/14 14:15:47 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/16 14:22:32 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,3 @@ void	adaptive_sort(t_stack_context *context, float disorder)
 	else
 		complex_sort(context, disorder);
 }
-
-//on peut optimiser nos algos si on combine ces instructions en une seule
-//si y a ra rb de suite ca devient un seul rr
-//rra rrb devient rrr

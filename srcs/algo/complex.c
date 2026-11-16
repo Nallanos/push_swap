@@ -6,53 +6,55 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:58:21 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/14 14:16:31 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/16 14:46:12 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	get_max_bits(int size)
+void	quicksort_a(t_stack_context *context, int size)
 {
-	int	max;
-	int	bits;
-
-	max = size - 1;
-	bits = 0;
-	while ((max >> bits) != 0)
-		++bits;
-	return (bits);
+	if (size <= 1)
+		return ;
+	if (size == 2)
+	{
+		if (context->a->array[0] > context->a->array[1])
+			do_op(context, op_sa);
+		return ;
+	}
+	if (size == 3)
+	{
+		sort_three_a(context);
+		return ;
+	}
+	partition_a(context, size);
+	quicksort_a(context, size - (size / 2));
+	quicksort_b(context, ((size / 2) - (size / 4)));
+	quicksort_b(context, size / 4);
 }
 
-static void	radix(t_stack_context *context, int bit)
+void	quicksort_b(t_stack_context *context, int size)
 {
-	int	i;
-	int	size;
-
-	i = 0;
-	size = context->a->size;
-	while (i < size)
-	{
-		if (((context->a->array[0] >> bit) & 1) == 1)
-			do_op(context, op_ra);
-		else
-			do_op(context, op_pb);
-		++i;
-	}
-	while (context->b->size > 0)
+	if (size <= 0)
+		return ;
+	else if (size == 1)
 		do_op(context, op_pa);
+	else if (size == 2)
+		push_two_b(context);
+	else if (size == 3)
+		sort_three_b(context);
+	else
+	{
+		partition_b(context, size);
+		quicksort_a(context, size - (size / 2));
+		quicksort_b(context, size / 2);
+	}
 }
 
 void	complex_sort(t_stack_context *context, float disorder)
 {
-	int	bit;
-	int	max_bits;
-
 	(void) disorder;
 	if (!index_stack(context->a))
 		return ;
-	max_bits = get_max_bits(context->a->size);
-	bit = -1;
-	while (++bit < max_bits)
-		radix(context, bit);
+	quicksort_a(context, context->a->size);
 }

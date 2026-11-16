@@ -6,7 +6,7 @@
 /*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 10:56:02 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/14 14:15:07 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/16 15:11:56 by moabdess         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_split(char **str)
 	i = 0;
 	while (str[i])
 	{
-		printf("%s\n", str[i]);
+		ft_putstr_fd(str[i], 1);
 		++i;
 	}
 }
