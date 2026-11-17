@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:30:00 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/14 14:09:16 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:07:59 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	choose_mode(t_exec_context exec_context, t_stack_context *context)
 	if (exec_context.mode == simple)
 		simple_sort(context, exec_context.disorder);
 	else if (exec_context.mode == medium)
-		medium_sort(context, exec_context.disorder);
+		medium_sort(context);
 	else if (exec_context.mode == complex)
 		complex_sort(context, exec_context.disorder);
 	else if (exec_context.mode == adaptive)

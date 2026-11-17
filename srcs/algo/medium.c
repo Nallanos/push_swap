@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:57:53 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/14 14:18:16 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:08:24 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,65 +60,36 @@ int	index_stack(t_stack *stack)
 	return (1);
 }
 
-void	push_chunks(t_stack_context *context, int chunk_size)
+void	push_chunks(t_stack_context *ctx, int chunk_size)
 {
 	int	top;
-	int	pushed_count;
+	int	pushed;
+	int	rb_pending;
 
 	top = chunk_size;
-	pushed_count = 0;
-	while (context->a->size > 0)
+	pushed = 0;
+	rb_pending = 0;
+	while (ctx->a->size > 0)
 	{
-		if (pushed_count == top)
+		if (pushed == top)
 			top += chunk_size;
-		if (context->a->array[0] < top)
+		if (ctx->a->array[0] < top)
 		{
-			do_op(context, op_pb);
-			pushed_count++;
-			if (context->b->size > 1
-				&& context->b->array[0] < top - (chunk_size / 2))
-				do_op(context, op_rb);
+			push_to_b(ctx, top - chunk_size / 2, &rb_pending);
+			pushed++;
 		}
 		else
-		{
-			do_op(context, op_ra);
-		}
+			rotate_a(ctx, &rb_pending);
 	}
+	if (rb_pending)
+		do_op(ctx, op_rb);
 }
 
-void	pull_back(t_stack_context *context)
-{
-	int	max_index;
-
-	while (context->b->size > 0)
-	{
-		max_index = find_max_index(context->b);
-		if (max_index <= context->b->size - max_index)
-		{
-			while (max_index > 0)
-			{
-				do_op(context, op_rb);
-				max_index--;
-			}
-		}
-		else
-		{
-			while (max_index < context->b->size)
-			{
-				do_op(context, op_rrb);
-				max_index++;
-			}
-		}
-		do_op(context, op_pa);
-	}
-}
-
-void	medium_sort(t_stack_context *context, float disorder)
+void	medium_sort(t_stack_context *context)
 {
 	int	chunk_size;
 	int	chunk_count;
 
-	(void) disorder;
 	chunk_count = ft_sqrt(context->a->size) / 2;
 	if (chunk_count < 1)
 		chunk_count = 1;

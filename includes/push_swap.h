@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 17:17:30 by moabdess          #+#    #+#             */
-/*   Updated: 2026/11/16 15:09:46 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:17:37 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,14 @@ long			ft_atol(const char *str);
 float			get_disorder(int *input, int len);
 void			simple_sort(t_stack_context *context, float disorder);
 void			adaptive_sort(t_stack_context *context, float disorder);
-void			medium_sort(t_stack_context *context, float disorder);
+void			medium_sort(t_stack_context *context);
 void			complex_sort(t_stack_context *context, float disorder);
 int				ft_sqrt(int nb);
+void			pull_back(t_stack_context *context);
+void			rotate_a(t_stack_context *ctx, int *rb_pending);
+int				min(int a, int b);
+void			push_to_b(t_stack_context *ctx, int mid, int *rb_pending);
+int				find_max_index(t_stack *s);
 int				index_stack(t_stack *stack);
 void			print_bench(t_exec_context exec_context,
 					t_stack_context *context);

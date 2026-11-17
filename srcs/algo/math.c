@@ -6,7 +6,7 @@
 /*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 15:33:04 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/11 15:42:59 by abenameu         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:31:50 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ int	ft_sqrt(int nb)
 		i++;
 	}
 	return (i - 1);
+}
+
+int	min(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
 }

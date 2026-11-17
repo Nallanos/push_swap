@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+         #
+#    By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/07 16:48:41 by moabdess          #+#    #+#              #
-#    Updated: 2026/11/16 14:58:01 by moabdess         ###   ########.fr        #
+#    Updated: 2026/11/17 12:55:36 by abenameu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,13 +30,14 @@ SRCS =	srcs/main.c \
 		srcs/op/push_operations.c \
 		srcs/op/rotate_op_reversed.c \
 		srcs/algo/simple.c \
+		srcs/algo/medium_utils.c \
 		srcs/algo/medium.c \
 		srcs/algo/complex.c \
 		srcs/algo/adaptive.c \
 		srcs/algo/math.c \
 		srcs/bench.c \
 		srcs/algo/complex_utils.c \
-		srcs/algo/partitions.c
+		srcs/algo/partitions.c \
 
 OBJS = $(SRCS:.c=.o)
 

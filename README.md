@@ -34,9 +34,35 @@ deletes all created object files and the push_swap executable library then recom
 
 ## Algorithms
 
-### Simple
+### Simple — selection sort, O(n²)
 
-### Medium
+While a is not empty, we find the index of the minimum of a and bring it to the top
+with the shortest rotation (`ra` if it is in the upper half, `rra` otherwise), then `pb`.
+Once a is empty, b holds the elements from largest (top) to smallest, so n `pa` rebuild a sorted.
+
+**Time**: each extraction costs at most size/2 rotations + 1 `pb`, so the total is at most
+n²/4 + 2n operations → O(n²).
+**Space**: O(1) besides the two stacks.
+
+### Medium — chunk sort, O(n√n)
+
+1. **Ranking**: every value is replaced by its rank (number of smaller values), so values
+   become 0..n-1 and chunk boundaries are trivial to compute.
+2. **Push phase**: ranks are split into k = √n / 2 chunks of size s = n / k. We scan a with `ra`
+   and `pb` every element of the current chunk. Elements in the lower half of their chunk are
+   sent to the bottom of b with `rb`, so b ends up roughly ordered, largest values near both ends.
+3. **Pull phase**: we repeatedly bring the maximum of b to the top (`rb`/`rrb`, shortest way) and `pa`.
+
+**Why √n**: the push phase scans a once per chunk (≈ n·k operations) and the pull phase pays
+roughly the chunk size per element (≈ n·s). Since k·s = n, the sum k + s is minimal when
+k = s = √n, giving O(n√n). The constant 1/2 was chosen experimentally (best results on 100 and 500).
+
+**Optimisations**:
+- a pending `rb` followed by an `ra` is merged into a single `rr`;
+- max-1 trick: if the second largest value is cheaper to reach than the largest, we push it first,
+  then the largest, then `sa`.
+
+**Space**: O(n) for the temporary rank array, O(1) otherwise.
 
 ### Complex
 
@@ -73,12 +99,31 @@ For the base cases we use these functions :
 
 ### Adaptive
 
+The disorder (fraction of inverted pairs, measured before any operation) selects the strategy:
+
+| Disorder | Strategy | Complexity |
+|---|---|---|
+| < 0.2 | Simple (selection sort) | O(n²) |
+| 0.2 – 0.5 | Medium (chunk sort) | O(n√n) |
+| ≥ 0.5 | Complex (quicksort) | O(n log n) |
+
+**Rationale for the thresholds**: with a low disorder, most elements are already close to their
+final place, so the minimum is usually near the top of a and selection sort pays very few rotations,
+with no preprocessing overhead. As the disorder grows, elements are spread further and the chunk
+sort's grouping pays off. Above 0.5 (random or reversed input), quicksort gives the lowest
+operation counts.
+
+**Measured results** (default mode, verified with checker_linux):
+100 numbers ≈ 616 operations (max 654), 500 numbers ≈ 4 888 operations (max 5 297).
+
+**Space**: O(n) for the stacks and the rank array; the quicksort recursion adds O(log n).
+
 
 ## Labor repartition
 
-**moabdess** : error parsing, complex algorithm, benchmark mode
+moabdess : first version of the input validation, complex algorithm (quicksort), benchmark mode, norm
 
-**abenameu** : sort operations, simple algorithm, medium algorithm
+abenameu : argument parsing and validation (rewrite), stack setup and memory, disorder, sort operations, simple algorithm, medium algorithm
 
 ## Resources
 
@@ -87,4 +132,10 @@ For the base cases we use these functions :
 - Quick sort wikipedia page : https://en.wikipedia.org/wiki/Quicksort
 - Video explanation of the quick sort algorithm : https://www.youtube.com/watch?v=Vtckgz38QHs
 - In depth explanation of how to implement the quick sort algorithm : https://www.youtube.com/watch?v=pM-6r5xsNEY
-- **AI was not used in any part of this project**
+### AI usage
+
+abenameu used an AI assistant (Claude) during the project, as a reviewer and a tutor rather than as a code generator:
+
+- **Understanding the algorithms**: explanations of the chunk sort (ranking, chunks, the `rb` trick), of why √n chunks balance the push and pull phases, and of the `rr` merge and max-1 optimisations, before implementing them.
+- **Debugging and code review**: spotting bugs in the argument parsing, the input validation (int overflow, sign handling), the stack setup (memory errors, uninitialised values, off-by-one) and the medium algorithm.
+- **Testing**: running test series with valgrind and the provided checker, and measuring operation counts on random inputs to tune the number of chunks.

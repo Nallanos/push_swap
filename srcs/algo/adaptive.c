@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moabdess <moabdess@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abenameu <abenameu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 11:59:08 by abenameu          #+#    #+#             */
-/*   Updated: 2026/11/16 14:22:32 by moabdess         ###   ########.fr       */
+/*   Updated: 2026/11/17 13:08:08 by abenameu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	adaptive_sort(t_stack_context *context, float disorder)
 	if (disorder < 0.2)
 		simple_sort(context, disorder);
 	else if (disorder < 0.5)
-		medium_sort(context, disorder);
+		medium_sort(context);
 	else
 		complex_sort(context, disorder);
 }
